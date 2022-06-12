@@ -12,4 +12,4 @@ define('DB_PASSWORD','');
 define('DB_NAME','');
 
 
-## the next step is running the .sql file in your localstore or online server
+Next step is running the .sql file in your localstore or online server
