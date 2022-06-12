@@ -1,12 +1,11 @@
-# ProductStore
+## ProductStore
 
-PHP & MySQL for backend
--
-Javascript & Bootstrap for Front
+Languages and Tech:
+- PHP & MySQL for backend
+- Javascript & Bootstrap for Front
 
-## First the database 
+## First Setup the database 
 
-// prod
 define('DB_SERVER','');
 define('DB_USER','');
 define('DB_PASSWORD','');
