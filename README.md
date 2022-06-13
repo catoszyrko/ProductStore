@@ -19,4 +19,23 @@ Next step is running the .sql file in your localstore or online server
 To use API, just go to api/index.php 
 
 Use postman for testing.
+READ EXAMPLE
+method: post
+action: read
+
+
+FIND EXAMPLE
+method: post
+action: find
+id: 8
+
+ADD / CREATE EXAMPLE
+method: post
+action: add
+nombre: televisor
+marca: philips
+sku: 12345678
+costo: 1000
+detail_1: LCD
+detail_2: 60
 
