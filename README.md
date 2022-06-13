@@ -13,3 +13,8 @@ define('DB_NAME','');
 
 
 Next step is running the .sql file in your localstore or online server
+
+
+##  API
+To use API, just go to api.php . 
+I'm developing subfolder API only for this purpose.
