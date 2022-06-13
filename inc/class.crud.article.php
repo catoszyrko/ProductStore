@@ -7,16 +7,17 @@
         var $costo; 
          
 		public function read($link){
-			$sql = "SELECT * FROM article";
-            $sq = mysqli_query($link,$sql);
+			$sql = "SELECT * FROM article ORDER BY id DESC";
+            $sq = $link->query($sql);
     		return $sq;
     	}
 
 		public function find($link, $id){
 			$id = mysqli_real_escape_string($link, $id);
 			$sql = "SELECT * FROM article WHERE id = '$id' ";
-			$sq = mysqli_query($link,$sql);
-			$s = mysqli_fetch_array($sq);
+			$sq = $link->query($sql);
+		    $s = mysqli_fetch_assoc($sq);
+
             return $s;
     	}
 		
@@ -24,7 +25,6 @@
 			$id = mysqli_real_escape_string($link, $id);
 			$sql = "DELETE FROM article WHERE id = '$id' ";
 			$link->query($sql);
-            
 		}
 
 		public function create($link, $nombre, $sku, $marca, $costo, $categoria, $detail_1, $detail_2){
@@ -62,30 +62,30 @@
 		
 	}
 
-    // subclasses 
-    
-    class televisor extends ARTICLE{
-        public $precio;
-        public function precio($costo){
-            $precio = $costo*1.35;
-            return $precio;
-        }
-    }
-    
-    class zapato extends ARTICLE{
-        public $precio;
-        public function precio($costo){
-            $precio = $costo*1.30;
-            return $precio;
-        }
-    }
+// subclasses 
 
-    class laptop extends ARTICLE{
-        public $precio;
-        public function precio($costo){
-            $precio = $costo*1.40;
-            return $precio;
-        }
+class televisor extends ARTICLE{
+    public $precio;
+    public function precio($costo){
+        $precio = $costo*1.35;
+        return $precio;
     }
+}
+    
+class zapato extends ARTICLE{
+    public $precio;
+    public function precio($costo){
+        $precio = $costo*1.30;
+        return $precio;
+    }
+}
+
+class laptop extends ARTICLE{
+    public $precio;
+    public function precio($costo){
+        $precio = $costo*1.40;
+        return $precio;
+    }
+}
 
 ?>

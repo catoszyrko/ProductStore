@@ -136,12 +136,13 @@
                             <th>Marca</th>
                             <th>Costo</th>
                             <th>Precio</th>
+                            <th>Detalle</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php
-                            while($result = mysqli_fetch_array($results)){
+                            while($result = mysqli_fetch_assoc($results)){
 
                             $precio = $article->price($result['categoria'], $result['costo']);
 
@@ -156,6 +157,7 @@
                                 <td><?=ucwords($result['marca'])?></td>
                                 <td>$<?=$result['costo']?></td>
                                 <td>$<?=$precio?></td>
+                                <td><?=$result['detail_1']?> - <?=$result['detail_2']?></td>
                                 <td>
                                     <form method="post" class="d-inline-flex">
                                         <input type="hidden" value="<?=$result['id']?>" name="id">
@@ -179,8 +181,6 @@
             </div>
         </div>
     </div>
-    
-
     
     <?php include_once('includes/footer.php');?>
 
