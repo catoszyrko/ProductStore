@@ -8,7 +8,8 @@
          
 		public function read($link){
 			$sql = "SELECT * FROM article ORDER BY id DESC";
-            $sq = $link->query($sql);
+            $sq = mysqli_query($link, $sql);
+            
     		return $sq;
     	}
 

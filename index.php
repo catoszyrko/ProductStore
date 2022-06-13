@@ -41,7 +41,7 @@
 
     <!-- content -->
     <div class="container mt-4">
-        <? if(!empty($_POST['action'])){?>
+        <?php if(!empty($_POST['action'])){?>
             <div class="row">
                 <div class="col-12">
                     <div class="alert alert-primary alert-sm" role="alert">
@@ -49,83 +49,83 @@
                     </div>
                 </div>
             </div>
-        <?}?>
+        <?php }?>
         <div class="row my-auto">
 
-            <div class="col-4">
+            <div class="col-3">
                 <form action="" method="post" class="form-control">
-                    <?if($_POST['action']=="update"){?><h5>Update Article</h5><?}else{?><h5>Add Article</h5><?}?>
+                    <?php if($_POST['action']=="update"){?><h5>Actualizar Articulo</h5><?php }else{?><h5>Agregar Articulo</h5><?php }?>
                     <input type="text" class="form-control" placeholder="Nombre" required name="nombre" value="<?=$articleDetails['nombre']?>"><br>
                     <input type="text" class="form-control" placeholder="SKU" required name="sku" value="<?=$articleDetails['sku']?>"><br>
                     <input type="text" class="form-control" placeholder="Costo" required name="costo" value="<?=$articleDetails['costo']?>"><br>
                     <input type="marca" class="form-control" placeholder="Marca" required name="marca" value="<?=$articleDetails['marca']?>"><br>
                     <select name="categoria" class="form-control" onchange="showDetails(this)">
                         <option>Seleccione Categoría</option>
-                        <option value="televisor" <?if($articleDetails['categoria']=="televisor"){echo "selected";}?>>Televisor</option>
-                        <option value="laptop" <?if($articleDetails['categoria']=="laptop"){echo "selected";}?>>Laptop</option>
-                        <option value="zapato" <?if($articleDetails['categoria']=="zapato"){echo "selected";}?>>Zapatos</option>
+                        <option value="televisor" <?php if($articleDetails['categoria']=="televisor"){echo "selected";}?>>Televisor</option>
+                        <option value="laptop" <?php if($articleDetails['categoria']=="laptop"){echo "selected";}?>>Laptop</option>
+                        <option value="zapato" <?php if($articleDetails['categoria']=="zapato"){echo "selected";}?>>Zapatos</option>
                     </select><br>
 
                     <div id="categoriaDetails">
-                    <?  switch($articleDetails['categoria']){
+                    <?php  switch($articleDetails['categoria']){
                             case 'televisor': ?>
                                 <div>
-                                    <input class="form-check-input" type="radio" name="detail_1" value="LED" <?if($articleDetails['detail_1']=="LED"){echo "checked";}?>>
+                                    <input class="form-check-input" type="radio" name="detail_1" value="LED" <?php if($articleDetails['detail_1']=="LED"){echo "checked";}?>>
                                     <label class="form-check-label" for="detail_1">
                                         LED
                                     </label>
-                                    <input class="form-check-input" type="radio" name="detail_1"  value="LCD" <?if($articleDetails['detail_1']=="LCD"){echo "checked";}?>>
+                                    <input class="form-check-input" type="radio" name="detail_1"  value="LCD" <?php if($articleDetails['detail_1']=="LCD"){echo "checked";}?>>
                                     <label class="form-check-label" for="detail_2">
                                         LCD
                                     </label>
                                     <input type="text" name="detail_2" placeholder="Tamaño de la Pantalla" class="form-control" value="<?=$articleDetails['detail_2']?>">
                                 </div>  
-                        <?  break;
+                        <?php  break;
                             case 'zapato':?>
                                 <div>
-                                    <input class="form-check-input" type="radio" name="detail_1" value="Piel" <?if($articleDetails['detail_1']=="Piel"){echo "checked";}?>>
+                                    <input class="form-check-input" type="radio" name="detail_1" value="Piel" <?php if($articleDetails['detail_1']=="Piel"){echo "checked";}?>>
                                     <label class="form-check-label" for="detail_1">
                                         Piel
                                     </label>
-                                    <input class="form-check-input" type="radio" name="detail_1" value="Plastico" <?if($articleDetails['detail_1']=="Plastico"){echo "checked";}?>>
+                                    <input class="form-check-input" type="radio" name="detail_1" value="Plastico" <?php if($articleDetails['detail_1']=="Plastico"){echo "checked";}?>>
                                     <label class="form-check-label" for="flexRadioDefault2" >
                                         Plástico
                                     </label>
                                     <input type="text" name="detail_2" placeholder="Número / Tamaño" class="form-control" value="<?=$articleDetails['detail_2']?>">
                                 </div>  
-                        <?  break;
+                        <?php  break;
                             case 'laptop':?>
                                 <div>
-                                    <input class="form-check-input" type="radio" value="INTEL"  name="detail_1"  <?if($articleDetails['detail_1']=="INTEL"){echo "checked";}?>>
+                                    <input class="form-check-input" type="radio" value="INTEL"  name="detail_1"  <?php if($articleDetails['detail_1']=="INTEL"){echo "checked";}?>>
                                     <label class="form-check-label" for="detail_1">
                                         INTEL
                                     </label>
-                                    <input class="form-check-input" type="radio" value="AMD" name="detail_1" <?if($articleDetails['detail_1']=="AMD"){echo "checked";}?>>
+                                    <input class="form-check-input" type="radio" value="AMD" name="detail_1" <?php if($articleDetails['detail_1']=="AMD"){echo "checked";}?>>
                                     <label class="form-check-label" for="detail_1">
                                         AMD
                                     </label>
                                     <input type="text" name="detail_2" placeholder="Memoria Ram" class="form-control" value="<?=$articleDetails['detail_2']?>">
                                 </div>  
-                        <?  break;
+                        <?php  break;
                     }  ?>
                         
                         
                         
                     </div>
                     <hr>
-                    <?if($_POST['action']=="update" || $_POST['action']=="updateOk" ){?>
+                    <?php if($_POST['action']=="update" || $_POST['action']=="updateOk" ){?>
                         <input type="hidden" name="action" value="updateOk">
                         <input type="hidden" name="id" value="<?=$articleDetails['id']?>">
-                        <button class="btn btn-primary form-control btn-sm">Update</button>
-                        <a href="./" class="btn btn-warning form-control btn-sm mt-3">New One</a>
-                    <?}else{?>
+                        <button class="btn btn-primary form-control btn-sm">Actualizar</button>
+                        <a href="./" class="btn btn-warning form-control btn-sm mt-3">Limpiar / Nuevo</a>
+                    <?php }else{?>
                         <input type="hidden" name="action" value="add">
-                        <button class="btn btn-primary form-control btn-sm">Add</button>
-                    <?}?>
+                        <button class="btn btn-primary form-control btn-sm">Agregar</button>
+                    <?php }?>
                 </form>
             </div>
 
-            <div class="col-8 d-flex justify-content-center s">
+            <div class="col-9 d-flex justify-content-center s">
                 <table class="table">
                     <thead>
                         <tr>
@@ -142,8 +142,7 @@
                     </thead>
                     <tbody>
                         <?php
-                            while($result = mysqli_fetch_assoc($results)){
-
+                            while($result = mysqli_fetch_array($results)){
                             $precio = $article->price($result['categoria'], $result['costo']);
 
                             
@@ -175,7 +174,7 @@
                                     </form>
                                 </td>
                             </tr>
-                        <?}?>
+                        <?php }?>
                     </thead>
                 </table>
             </div>
