@@ -25,7 +25,7 @@ action: read
 
 
 FIND EXAMPLE
-````
+```
 {
     'action': 'find'
     'id': '8'
