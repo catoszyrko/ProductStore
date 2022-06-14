@@ -2,15 +2,16 @@
 
 Languages and Tech:
 - PHP & MySQL for backend
-- Javascript & Bootstrap for Front
+- Javascript, HTML, CSS (Bootstrap) for Front
 
 ## First Setup the database 
 
-define('DB_SERVER','');
-define('DB_USER','');
-define('DB_PASSWORD','');
-define('DB_NAME','');
-
+```
+    define('DB_SERVER','');
+    define('DB_USER','');
+    define('DB_PASSWORD','');
+    define('DB_NAME','');
+```
 
 Next step is running the .sql file in your localstore or online server
 
@@ -18,9 +19,16 @@ Next step is running the .sql file in your localstore or online server
 ##  API
 To use API, just go to api/index.php 
 
-Use postman for testing.
+Use postman for testing. Allways with post method
 READ EXAMPLE
-method: post
+```
+{
+    'action': 'read'
+}
+```
+
+
+
 action: read
 
 
@@ -43,3 +51,4 @@ ADD / CREATE EXAMPLE
     'detail_1': 'LCD',
     'detail_2': '60'
 }
+```
