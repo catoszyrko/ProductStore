@@ -25,11 +25,14 @@ action: read
 
 
 FIND EXAMPLE
-method: post
-action: find
-id: 8
+
+´{
+    'action': 'find'
+    'id': '8'
+}´
 
 ADD / CREATE EXAMPLE
+
 method: post
 action: add
 nombre: televisor
