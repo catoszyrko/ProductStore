@@ -27,19 +27,19 @@ action: read
 FIND EXAMPLE
 ```
 {
-    'action': 'find'
+    'action': 'find',
     'id': '8'
 }
 ```
 
 ADD / CREATE EXAMPLE
-
-method: post
-action: add
-nombre: televisor
-marca: philips
-sku: 12345678
-costo: 1000
-detail_1: LCD
-detail_2: 60
-
+```
+{
+    'action': 'add',
+    'nombre': 'televisor',
+    'marca': 'philips',
+    'sku': '12345678',
+    'costo: '1000',
+    'detail_1': 'LCD',
+    'detail_2': '60'
+}
